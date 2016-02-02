@@ -1,0 +1,15 @@
+{
+  "name": "taiga/php-sdk",
+  "description": "SDK PHP for Taiga api V1",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.0",
+    "kriswallsmith/buzz": "~0.15",
+    "ext-curl": "*",
+    "ext-openssl": "*"
+  },
+  "autoload": {
+    "files": ["Taiga/Autoloader.php"]
+  }
+}
