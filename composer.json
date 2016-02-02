@@ -10,6 +10,7 @@
     "ext-openssl": "*"
   },
   "autoload": {
+    "psr-4": { "Taiga\\": "" },
     "files": ["Taiga/Autoloader.php"]
   }
 }
