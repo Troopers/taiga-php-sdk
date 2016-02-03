@@ -9,6 +9,8 @@ namespace Taiga;
 class Api extends RestClient
 {
     public $projects;
+    public $users;
+
     /**
      * Constructor
      */
@@ -17,5 +19,6 @@ class Api extends RestClient
         parent::__construct($token, $baseUrl);
         // API Endpoints
         $this->projects = new Endpoints\Projects($this);
+        $this->users = new Endpoints\Users($this);
     }
 }
