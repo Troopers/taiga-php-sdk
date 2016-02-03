@@ -5,7 +5,7 @@ namespace Taiga;
 
 abstract class Endpoint
 {
-    const PREFIX = '';
+    protected $prefix;
     protected $root;
 
     /**
@@ -21,9 +21,9 @@ abstract class Endpoint
      * @param $url
      * @return array
      */
-    protected function get($url)
+    protected function get($url, $params = [])
     {
-        return $this->root->request('get', sprintf('%s/%s', self::PREFIX, $url));
+        return json_decode($this->root->request('get', sprintf('/%s/%s?%s', $this->prefix, $url, http_build_query($params))));
     }
 
     /**
@@ -31,9 +31,9 @@ abstract class Endpoint
      * @param array $data
      * @return array
      */
-    protected function post($url, array $data)
+    protected function post($url, array $data, array $params = [])
     {
-        return $this->root->request('post', sprintf('%s/%s', self::PREFIX, $url), $data);
+        return json_decode($this->root->request('post', sprintf('/%s/%s?%s', $this->prefix, $url, http_build_query($params)), $data));
     }
 
     /**
@@ -41,9 +41,9 @@ abstract class Endpoint
      * @param array $data
      * @return array
      */
-    public function put($url, array $data)
+    public function put($url, array $data, array $params = [])
     {
-        return $this->root->request('put', sprintf('%s/%s', self::PREFIX, $url), $data);
+        return json_decode($this->root->request('put', sprintf('/%s/%s?%s', $this->prefix, $url, http_build_query($params)), $data));
     }
 
     /**
@@ -51,9 +51,9 @@ abstract class Endpoint
      * @param array $data
      * @return array
      */
-    protected function patch($url, array $data)
+    protected function patch($url, array $data, array $params = [])
     {
-        return $this->root->request('patch', sprintf('%s/%s', self::PREFIX, $url), $data);
+        return json_decode($this->root->request('patch', sprintf('/%s/%s?%s', $this->prefix, $url, http_build_query($params)), $data));
     }
 
     /**
@@ -62,6 +62,6 @@ abstract class Endpoint
      */
     public function delete($id)
     {
-        return $this->root->request('delete', sprintf('%s/%s', self::PREFIX, $id));
+        return json_decode($this->root->request('delete', sprintf('/%s/%s', $this->prefix, $id)));
     }
 }

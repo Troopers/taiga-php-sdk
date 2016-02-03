@@ -2,18 +2,36 @@
 
 namespace Taiga\Endpoints;
 
+use Taiga\Api;
 use Taiga\Endpoint;
 
 class Projects extends Endpoint
 {
-    const PREFIX = 'projects';
 
     /**
-     * @return array
+     * Projects Endpoint constructor.
+     * @param Api $root
      */
-    public function getList()
+    public function __construct(Api $root)
     {
-        return $this->get(null);
+        parent::__construct($root);
+        $this->prefix = 'projects';
+    }
+
+    /**
+     * @params array $params
+     * - member: member id
+     * - members: member ids
+     * - is_looking_for_people: the project is looking for new members
+     * - is_featured: the project has been highlighted by the instance staff
+     * - is_backlog_activated: backlog is active
+     * - is_kanban_activated: kanban is active
+     *
+     * @return \stdClass[]
+     */
+    public function getList($params = [])
+    {
+        return json_decode($this->root->request('get', sprintf('/%s?%s', $this->prefix, http_build_query($params))));
     }
 
     /**
@@ -211,7 +229,7 @@ class Projects extends Endpoint
      */
     public function modify($id, $data)
     {
-        $this->put(sprintf('%s/%s', self::PREFIX, $id), $data);
+        $this->put($id, $data);
     }
 }
 

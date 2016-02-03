@@ -30,7 +30,7 @@ class RestClient
      */
     public function request($method, $apiCall, $payload = [])
     {
-        $url = $this->baseUrl . $apiCall;
+        $url = rtrim($this->baseUrl . $apiCall, '/?');
         $curl = $this->prepareCurl();
         $browser = new Browser($curl);
         $headers = [
