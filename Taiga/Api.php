@@ -10,15 +10,17 @@ class Api extends RestClient
 {
     public $projects;
     public $users;
+    public $milestones;
 
     /**
      * Constructor
      */
-    function __construct($token, $baseUrl)
+    public function __construct($token, $baseUrl)
     {
         parent::__construct($token, $baseUrl);
         // API Endpoints
         $this->projects = new Endpoints\Projects($this);
         $this->users = new Endpoints\Users($this);
+        $this->milestones = new Endpoints\Milestones($this);
     }
 }

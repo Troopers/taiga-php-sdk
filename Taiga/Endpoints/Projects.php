@@ -121,7 +121,7 @@ class Projects extends Endpoint
      */
     public function create($data)
     {
-        return $this->post('projects', $data);
+        return json_decode($this->root->request('post', sprintf('/%s?%s', $this->prefix, http_build_query($data))));
     }
 
     /**

@@ -60,3 +60,56 @@ Authorization: Bearer ${AUTH_TOKEN}
 ```
 
 Follow these instructions to [generate your token](https://taigaio.github.io/taiga-doc/dist/api.html#auth-normal-login)
+
+Feature coverage (help wanted)
+-------------------------------------------------
+
+Some endpoints has been developped but there is still some couple of hours of work to have a full coverage of the API possibilities.
+Please, if you use this bundle and need more, share your needs or your work by creating issue or PR.
+
+### Done
+
+- Projects
+- Users
+- Milestones (sprints)
+
+### Todo
+
+- Auth
+- Applications
+- Application Tokens
+- Resolver
+- Searches
+- User storage
+- Project templates
+- Memberships/Invitations
+- User stories
+- User story status
+- Points
+- User story custom attribute
+- User story custom attributes values
+- Tasks
+- Task status
+- Task custom attribute
+- Task custom attributes values
+- Issues
+- Issue status
+- Issue types
+- Priorities
+- Severities
+- Issue custom attribute-6. Issue custom attributes values
+- Wiki pages
+- Wiki links
+- History
+- Notify policies
+- Feedback
+- Export/Import
+- Webhooks
+- Timelines
+- Locales
+- Stats
+
+Using Symfony ?
+-------------------------------------------------
+
+Use the [troopers/taiga-bundle](https://github.com/Troopers/TaigaBundle) to ease the API manipulation.
