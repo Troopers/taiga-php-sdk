@@ -11,6 +11,7 @@ class Api extends RestClient
     public $projects;
     public $users;
     public $milestones;
+    public $userStories;
 
     /**
      * Constructor
@@ -22,5 +23,6 @@ class Api extends RestClient
         $this->projects = new Endpoints\Projects($this);
         $this->users = new Endpoints\Users($this);
         $this->milestones = new Endpoints\Milestones($this);
+        $this->userStories = new Endpoints\UserStories($this);
     }
 }

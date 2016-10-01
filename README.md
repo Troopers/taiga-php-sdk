@@ -69,9 +69,10 @@ Please, if you use this bundle and need more, share your needs or your work by c
 
 ### Done
 
+- Milestones (sprints)
 - Projects
 - Users
-- Milestones (sprints)
+- User stories
 
 ### Todo
 
@@ -83,7 +84,6 @@ Please, if you use this bundle and need more, share your needs or your work by c
 - User storage
 - Project templates
 - Memberships/Invitations
-- User stories
 - User story status
 - Points
 - User story custom attribute
