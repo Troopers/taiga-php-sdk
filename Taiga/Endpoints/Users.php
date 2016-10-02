@@ -19,6 +19,29 @@ class Users extends Endpoint
     }
 
     /**
+     * List users
+     *
+     * @param array $params
+     *
+     * @return \stdClass
+     */
+    public function getList($params = [])
+    {
+        return json_decode($this->root->request('get', sprintf('/%s?%s', $this->prefix, http_build_query($params))));
+    }
+
+    /**
+     * Get user by id
+     *
+     * @param $id
+     * @return array
+     */
+    public function getById($id)
+    {
+        return $this->get($id);
+    }
+
+    /**
      * @return \stdClass
      */
     public function getMe()

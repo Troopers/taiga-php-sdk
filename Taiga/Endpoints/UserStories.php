@@ -9,7 +9,7 @@ class UserStories extends Endpoint
 {
 
     /**
-     * Milestones Endpoint constructor.
+     * UserStories Endpoint constructor.
      * @param Api $root
      */
     public function __construct(Api $root)
@@ -274,7 +274,7 @@ class UserStories extends Endpoint
     }
 
     /**
-     * Delete a milestone
+     * Delete a user story
      *
      * @param $userStoryAttachmentId
      */

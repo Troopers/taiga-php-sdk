@@ -71,6 +71,7 @@ Please, if you use this bundle and need more, share your needs or your work by c
 
 - Milestones (sprints)
 - Projects
+- Tasks
 - Users
 - User stories
 
@@ -88,7 +89,6 @@ Please, if you use this bundle and need more, share your needs or your work by c
 - Points
 - User story custom attribute
 - User story custom attributes values
-- Tasks
 - Task status
 - Task custom attribute
 - Task custom attributes values
